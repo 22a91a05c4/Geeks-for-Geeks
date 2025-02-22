@@ -1,0 +1,29 @@
+class Solution {
+    public static boolean checkEqual(int[] a, int[] b) {
+        HashMap<Integer,Integer> hm1 = new HashMap<Integer,Integer>();
+        HashMap<Integer,Integer> hm2 = new HashMap<Integer,Integer>();
+        for(int i=0;i<a.length;i++)
+        {
+            if(hm1.containsKey(a[i]))
+            {
+                hm1.put(a[i],hm1.get(a[i])+1);
+            }
+            else
+            {
+                hm1.put(a[i],1);
+            }
+        }
+        for(int i=0;i<b.length;i++)
+        {
+            if(hm2.containsKey(b[i]))
+            {
+                hm2.put(b[i],hm2.get(b[i])+1);
+            }
+            else
+            {
+                hm2.put(b[i],1);
+            }
+        }
+        return hm1.equals(hm2);
+    }
+}
