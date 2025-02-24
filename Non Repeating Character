@@ -1,0 +1,38 @@
+class Solution {
+    // Function to find the first non-repeating character in a string.
+    static char nonRepeatingChar(String s) {
+        // Your code here
+        LinkedHashMap<Character,Integer> hm = new LinkedHashMap<Character,Integer>();
+        char a1=0;
+        int ans=0;
+        for(int i=0;i<s.length();i++)
+        {
+            if(hm.containsKey(s.charAt(i)))
+            {
+                hm.put(s.charAt(i),hm.get(s.charAt(i))+1);
+            }
+            else
+            {
+                hm.put(s.charAt(i),1);
+            }
+        }
+        for(Map.Entry<Character,Integer> i : hm.entrySet())
+        {
+            if(i.getValue()==1)
+            {
+                a1=i.getKey();
+                ans++;
+                break;
+            }
+        }
+        //System.out.println(hm);
+        if(ans>0)
+        {
+            return a1;
+        }
+        else
+        {
+            return '$';
+        }
+    }
+}
