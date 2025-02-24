@@ -1,0 +1,14 @@
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        TreeSet<Integer> ts = new TreeSet<Integer>();
+        for(int i : arr)
+        {
+            ts.add(i);
+        }
+        if(ts.size()<2)
+        {
+            return -1;
+        }
+        return ts.lower(ts.last());
+    }
+}
