@@ -1,0 +1,23 @@
+class Solution {
+    boolean twoSum(int arr[], int target) {
+        HashSet<Integer> hs = new HashSet<Integer>();
+        int c=0;
+        for(int i : arr)
+        {
+            int f=target-i;
+            if(hs.contains(f))
+            {
+                c++;
+            }
+            hs.add(i);
+        }
+        if(c>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
